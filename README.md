@@ -1,4 +1,4 @@
-# Proxy Server
+# Proxy Server Setup
 ## Description
 This simple script can easily create an HTTP(s) proxy server without hassle. All you need is a Linux server (preferably Ubuntu) and run the script (instructions given below). Congratulations, now you have an up-and-running proxy server.
 
@@ -6,7 +6,7 @@ This simple script can easily create an HTTP(s) proxy server without hassle. All
 
 ## Requirments
 + A VPS Server.
-+ Basic terminal skils.
++ Basic terminal skills.
 
 ## Instructions
 1. Connect to your server via SSH.
