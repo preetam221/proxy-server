@@ -48,5 +48,5 @@ nameserver 208.67.220.220" >> /etc/resolv.conf
 # Success Message
 figlet SUCCESS.
 echo You can now connect to your proxy using the credentials below:
-echo Address: $(wget -qO- icanhazip.com)
+echo Address: $(wget -qO- ipinfo.io/ip)
 echo Port: 8888
