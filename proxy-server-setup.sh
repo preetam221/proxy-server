@@ -36,17 +36,14 @@ MaxRequestsPerChild 1000" >> /etc/tinyproxy/tinyproxy.conf
 sudo systemctl restart tinyproxy.service
 
 # Edit DNS
-sudo sed -i 's/#DNS=/DNS=1.1.1.1/g' /etc/systemd/resolved.conf
-sudo sed -i 's/#FallbackDNS=/FallbackDNS=1.0.0.1/g' /etc/systemd/resolved.conf
+sudo sed -i 's/#DNS=/DNS=208.67.222.222/g' /etc/systemd/resolved.conf
+sudo sed -i 's/#FallbackDNS=/FallbackDNS=208.67.220.220/g' /etc/systemd/resolved.conf
 sudo systemctl restart systemd-resolved
 sudo sed -i 's/nameserver/#nameserver/g' /etc/resolv.conf
 sudo echo "
-# IPv4 dns
-nameserver 1.1.1.1
-nameserver 1.0.0.1
-# IPv6 dns
-nameserver 2606:4700:4700::1111
-nameserver 2606:4700:4700::1001" >> /etc/resolv.conf
+# Luveedu Public DNS
+nameserver 208.67.222.222
+nameserver 208.67.220.220" >> /etc/resolv.conf
 
 # Success Message
 figlet SUCCESS.
