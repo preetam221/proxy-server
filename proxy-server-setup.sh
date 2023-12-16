@@ -40,7 +40,8 @@ sudo sed -i 's/#DNS=/DNS=1.1.1.1/g' /etc/systemd/resolved.conf
 sudo sed -i 's/#FallbackDNS=/FallbackDNS=1.0.0.1/g' /etc/systemd/resolved.conf
 sudo systemctl restart systemd-resolved
 sudo sed -i 's/nameserver/#nameserver/g' /etc/resolv.conf
-sudo echo "# IPv4 dns
+sudo echo "
+# IPv4 dns
 nameserver 1.1.1.1
 nameserver 1.0.0.1
 # IPv6 dns
