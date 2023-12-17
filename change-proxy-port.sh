@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Create default configuration copy, if not exist.
+# Create default configuration backup.
 if [ ! -f /etc/tinyproxy/tinyproxy.conf.default ]
 then
     sudo cp /etc/tinyproxy/tinyproxy.conf /etc/tinyproxy/tinyproxy.conf.default
