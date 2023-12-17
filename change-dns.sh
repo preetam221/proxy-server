@@ -9,7 +9,7 @@ else
 fi
 
 # Change DNS.
-echo "Enter you prefered option:
+echo "Enter your preferred option:
 1. Google
 2. Cloudflare
 3. Gcore
@@ -81,7 +81,7 @@ echo Done.
 # Custom DNS
 elif [ "$inpt" == "5" ] || [ "$inpt" == "Custom" ]
 then
-    echo "Choose any option:
+    echo "Choose an option:
     1. IPv4 Only
     2. Both, IPv4 & IPv6"
     read resp
