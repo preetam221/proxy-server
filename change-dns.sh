@@ -8,7 +8,7 @@ else
     sudo mv /etc/resolv.conf /etc/resolv.conf.default
 fi
 
-# Change dns.
+# Change DNS.
 echo "Enter you prefered option:
 1. Google
 2. Cloudflare
