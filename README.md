@@ -12,7 +12,7 @@ This simple script can easily create an HTTP(s) proxy server without hassle. All
 1. Connect to your server via SSH.
 2. Then run the command:
 ```
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/preetam221/proxy-server/main/proxy-server-setup.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/preetam221/proxy-server/main/proxy-server-setup.sh)"
 ```
 3. You should get your credentials at the bottom of your terminal output.
 
@@ -20,10 +20,10 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/preetam221/proxy-server/ma
 
 ### To change the default port:
 ```
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/preetam221/proxy-server/main/change-proxy-port.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/preetam221/proxy-server/main/change-proxy-port.sh)"
 ```
 
 ### To change DNS Server:
 ```
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/preetam221/proxy-server/main/change-dns.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/preetam221/proxy-server/main/change-dns.sh)"
 ```
