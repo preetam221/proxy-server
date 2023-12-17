@@ -14,4 +14,16 @@ This simple script can easily create an HTTP(s) proxy server without hassle. All
 ```
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/preetam221/proxy-server/main/proxy-server-setup.sh)"
 ```
-3. When done you should get your credentials.
+3. You should get your credentials at the bottom of you terminal output.
+
+**Note: The proxy server will use port 443 and Google Public DNS by default. However, you can change that easily by following the steps below.**
+
+### To change the default port:
+```
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/preetam221/proxy-server/main/change-proxy-port.sh)"
+```
+
+### To change DNS Server:
+```
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/preetam221/proxy-server/main/change-dns.sh)"
+```
