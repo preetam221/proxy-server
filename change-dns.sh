@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # Backup default configuration, if not done.
-if [ ! -f /etc/resolv.conf.default ]
+if [ -f /etc/resolv.conf.default ]
 then
+    sudo rm /etc/resolv.conf    
+else
     sudo mv /etc/resolv.conf /etc/resolv.conf.default
-elif [ -f /etc/resolv.conf.default ]
-    sudo rm /etc/resolv.conf
 fi
 
 # Change dns.
