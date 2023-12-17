@@ -33,20 +33,21 @@ StartServers 20
 # leakage, then set this to something like 10000.
 #
 MaxRequestsPerChild 1000" >> /etc/tinyproxy/tinyproxy.conf
+sudo sed -i 's/Port 8888/Port 443/g' /etc/tinyproxy/tinyproxy.conf
 sudo systemctl restart tinyproxy.service
 
 # Edit DNS
-sudo sed -i 's/#DNS=/DNS=208.67.222.222/g' /etc/systemd/resolved.conf
-sudo sed -i 's/#FallbackDNS=/FallbackDNS=208.67.220.220/g' /etc/systemd/resolved.conf
+sudo sed -i 's/#DNS=/DNS=8.8.4.4/g' /etc/systemd/resolved.conf
+sudo sed -i 's/#FallbackDNS=/FallbackDNS=8.8.8.8/g' /etc/systemd/resolved.conf
 sudo systemctl restart systemd-resolved
 sudo sed -i 's/nameserver/#nameserver/g' /etc/resolv.conf
 sudo echo "
-# Luveedu Public DNS
-nameserver 208.67.222.222
-nameserver 208.67.220.220" >> /etc/resolv.conf
+# Google Public DNS
+nameserver 8.8.4.4
+nameserver 8.8.8.8" >> /etc/resolv.conf
 
 # Success Message
 figlet SUCCESS.
 echo You can now connect to your proxy using the credentials below:
 echo Address: $(wget -qO- ipinfo.io/ip)
-echo Port: 8888
+echo Port: 443
