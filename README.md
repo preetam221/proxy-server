@@ -16,7 +16,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/preetam221/proxy-server/ma
 ```
 3. You should get your credentials at the bottom of your terminal output.
 
-**Note: The proxy server will use port _`443`_ and _`Google Public DNS`_ by default. However, you can change that easily by following the steps below.**
+> **Note: The proxy server will use port _`443`_ and _`Google Public DNS`_ by default. However, you can change that easily by following the steps below.**
 
 ### To change the default port:
 ```
