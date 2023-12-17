@@ -13,4 +13,5 @@ sudo sed 's/^Port.*/Port '$port'/' /etc/tinyproxy/tinyproxy.conf|sudo tee /etc/t
 sudo rm /etc/tinyproxy/tinyproxy.conf
 sudo mv /etc/tinyproxy/tinyproxy.conf.output /etc/tinyproxy/tinyproxy.conf
 sudo systemctl restart tinyproxy.service
+clear
 echo Done.
