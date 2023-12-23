@@ -56,13 +56,10 @@ sudo sysctl -w net.ipv6.conf.all.disable_ipv6=1
 sudo sysctl -w net.ipv6.conf.default.disable_ipv6=1
 
 # Disable IPv6 on startup
-sudo echo "# Disable IPv6
-sudo sysctl -w net.ipv6.conf.all.disable_ipv6=1
-sudo sysctl -w net.ipv6.conf.default.disable_ipv6=1" >> /root/.local/bin/startup.sh
 sudo echo "[Unit]
 Description=Startup Script
 [Service]
-ExecStart=/root/.local/bin/startup.sh
+ExecStart=sudo sysctl -w net.ipv6.conf.all.disable_ipv6=1 && sudo sysctl -w net.ipv6.conf.default.disable_ipv6=1
 [Install]
 WantedBy=multi-user.target" >> /lib/systemd/system/startup.service
 sudo systemctl enable startup.service
