@@ -33,9 +33,6 @@ StartServers 20
 # leakage, then set this to something like 10000.
 #
 MaxRequestsPerChild 1000" >> /etc/tinyproxy/tinyproxy.conf
-
-# Change default port to 443
-sudo sed -i 's/Port 8888/Port 443/g' /etc/tinyproxy/tinyproxy.conf
 sudo systemctl restart tinyproxy.service
 
 # Edit DNS
@@ -54,8 +51,24 @@ nameserver 8.8.8.8
 nameserver 2001:4860:4860::8844
 nameserver 2001:4860:4860::8888" >> /etc/resolv.conf
 
+# Disable IPv6
+sudo sysctl -w net.ipv6.conf.all.disable_ipv6=1
+sudo sysctl -w net.ipv6.conf.default.disable_ipv6=1
+
+# Disable IPv6 on startup
+sudo echo "# Disable IPv6
+sudo sysctl -w net.ipv6.conf.all.disable_ipv6=1
+sudo sysctl -w net.ipv6.conf.default.disable_ipv6=1" >> /root/.local/bin/startup.sh
+sudo echo "[Unit]
+Description=Startup Script
+[Service]
+ExecStart=/root/.local/bin/startup.sh
+[Install]
+WantedBy=multi-user.target" >> /lib/systemd/system/startup.service
+sudo systemctl enable startup.service
+
 # Success Message
 figlet SUCCESS.
 echo You can now connect to your proxy using the credentials below:
 echo Address: $(wget -qO- ipinfo.io/ip)
-echo Port: 443
+echo Port: 8888
