@@ -12,6 +12,7 @@ sudo cp /etc/tinyproxy/tinyproxy.conf /etc/tinyproxy/tinyproxy.conf.default
 sudo sed -i 's/Allow 127.0.0.1/#Allow 127.0.0.1/g' /etc/tinyproxy/tinyproxy.conf
 sudo sed -i 's/Allow ::1/#Allow ::1/g' /etc/tinyproxy/tinyproxy.conf
 sudo sed -i 's/#DisableViaHeader Yes/DisableViaHeader Yes/g' /etc/tinyproxy/tinyproxy.conf
+sudo sed -i 's/ViaProxyName "tinyproxy"/ViaProxyName "airtel"/g' /etc/tinyproxy/tinyproxy.conf
 sudo echo "#
 # MinSpareServers/MaxSpareServers: These settings set the upper and
 # lower limit for the number of spare servers that should be available.
