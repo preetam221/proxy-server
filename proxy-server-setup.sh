@@ -9,6 +9,7 @@ sudo apt-get install -y tinyproxy sed figlet wget
 # Configure the server
 sudo systemctl enable tinyproxy.service
 sudo cp /etc/tinyproxy/tinyproxy.conf /etc/tinyproxy/tinyproxy.conf.default
+sudo sed -i 's/Port 8888/Port 443/g' /etc/tinyproxy/tinyproxy.conf
 sudo sed -i 's/Allow 127.0.0.1/#Allow 127.0.0.1/g' /etc/tinyproxy/tinyproxy.conf
 sudo sed -i 's/Allow ::1/#Allow ::1/g' /etc/tinyproxy/tinyproxy.conf
 sudo sed -i 's/#DisableViaHeader Yes/DisableViaHeader Yes/g' /etc/tinyproxy/tinyproxy.conf
@@ -69,4 +70,4 @@ sudo systemctl enable startup.service
 figlet SUCCESS.
 echo You can now connect to your proxy using the credentials below:
 echo Address: $(wget -qO- ipinfo.io/ip)
-echo Port: 8888
+echo Port: 443
