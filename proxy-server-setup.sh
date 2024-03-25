@@ -3,6 +3,9 @@
 # Update Package repositories
 sudo apt-get update
 
+# Upgrade the system
+sudo apt-get full-upgrade -y
+
 # Install required packages
 sudo apt-get install -y tinyproxy sed figlet wget
 
